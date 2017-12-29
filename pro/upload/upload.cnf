@@ -1,0 +1,8 @@
+# [upload]
+# file_count = 0
+#
+
+
+# [file0] 
+# file_name = xxx.js
+# relative_path = app/test/

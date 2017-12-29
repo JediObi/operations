@@ -1,0 +1,21 @@
+[local]
+project_dir=/media/fc/doc/ideaproject_linux/rh
+build_name=rh
+
+[remote]
+host_name=10.51.1.11
+host_port=22
+host_username=admin
+host_password=ruihua123456
+host_upload_dir=/home/admin/admin_fc
+host_tomcat_home=/home/admin/tomcat
+
+db_type=MYSQL
+db_ip=10.51.1.16
+db_port=3306
+db_name=lis
+db_username=lis
+db_password=ruihua123456
+
+app_http_url=http://10.51.1.11:8080/rh
+# app_http_url=http://118.89.127.220/rh
