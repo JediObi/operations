@@ -1,8 +1,12 @@
-# [upload]
-# file_count = 0
+[upload]
+file_count = 2
 #
 
 
-# [file0] 
-# file_name = xxx.js
-# relative_path = app/test/
+[file0] 
+file_name = test.txt
+target_path = /home/admin/app/apache-tomcat-8.0.36/webapps/rh/app/
+
+[file1]
+file_name = test2.txt
+target_path = /home/admin/admin_fc/

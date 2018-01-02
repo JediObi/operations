@@ -16,7 +16,10 @@ db_username=root
 db_password=ruihua123456
 upload_path=/home/admin/admin_fc
 server_name = app
+
+# server count
 server_count = 5
+
 app_tomcat_home = /home/admin/app/apache-tomcat-8.0.36
 app_upload_path = /home/admin/admin_fc
 

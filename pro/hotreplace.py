@@ -28,7 +28,7 @@ app_tomcat_home = config.get('remote','app_tomcat_home')
 app_upload_path = config.get('upload','app_upload_path')
 
 
-# hot replace file info
+# replace file info
 config_upload_file='./upload/upload.cnf'
 config_upload = configparser.ConfigParser()
 config_upload.read(config_upload_file)
@@ -40,6 +40,7 @@ host_list = []
 port_list = []
 username_list = []
 password_list = []
+# append server info list
 for i in range(server_count):
 	host_list.append(config.get(server_name+str(i),'host_name'))
 	port_list.append(config.get(server_name+str(i),'host_port'))
@@ -67,6 +68,6 @@ def hotreplace():
 		if result.failed and confirm('put file failed,Y to deal error, N ignore?'):
 			abort('no deal')
 		# replace
-		command_copy = 'cp '+app_upload_path+'/'+file_name+' '+app_tomcat_home+'/webapps/'+build_name+'/'+config_upload.get('file'+str(i),'relative_path')
+		command_copy = 'cp '+app_upload_path+'/'+file_name+' '+config_upload.get('file'+str(i),'target_path')
 		run(command_copy)
 

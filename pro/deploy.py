@@ -15,10 +15,12 @@ gate_host_name = config.get('remote','host_name')
 gate_host_port = config.get('remote','host_port')
 gate_host_username = config.get('remote','host_username')
 gate_host_password = config.get('remote','host_password')
+# 'admin@127.0.0.1:22'
 gate_host = concathost.ConcatHost(gate_host_name,gate_host_port,gate_host_username)
 
 gate_upload_path = config.get('remote','upload_path')
 build_name = config.get('local','build_name')
+# war file path in gate
 src = gate_upload_path+'/'+build_name+'.war'
 
 server_name = config.get('remote','server_name')
@@ -32,12 +34,13 @@ host_list = []
 port_list = []
 username_list = []
 password_list = []
+# read server info into list
 for i in range(server_count):
 	host_list.append(config.get(server_name+str(i),'host_name'))
 	port_list.append(config.get(server_name+str(i),'host_port'))
 	username_list.append(config.get(server_name+str(i),'host_username'))
 	password_list.append(config.get(server_name+str(i),'host_password'))
-# set host info and pass
+# set host(list) info and pass(dictionary)
 env.hosts,env.passwords = buildhosts.BuildHosts(host_list,port_list,username_list,password_list)
 # set gateway host info
 env.gateway = gate_host
@@ -52,7 +55,7 @@ def test():
 def upload():
 	with settings(warn_only=True):
 		result = put(src,app_upload_path)
-	if result.failed and not confirm('put file failed,Continue[Y/N]?'):
+	if result.failed and confirm('put file failed,Y deal, N ignore[Y/N]?'):
 		abort('Aborting file put task!')
 
 # deploy to tomcat
@@ -73,7 +76,7 @@ def update():
 	print('Administrator: Old version removed!')
 
 	# copy new version
-	command_copy = 'cp '+app_upload_path+'/'+build_name+'.war'
+	command_copy = 'cp '+app_upload_path+'/'+build_name+'.war'+' '+app_tomcat_home+'/webapps/'
 	run(command_copy)
 	print('Administrator: New version copied!')
 
