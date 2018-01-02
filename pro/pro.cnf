@@ -2,18 +2,22 @@
 poject_home=/media/fc/soft/ideaProjects_win
 git_branch=master
 build_name=rh
+db_back_path = ./db_bak
 
 [remote]
 host_name=139.199.148.107
 host_port=19573
 host_username=admin
 host_password=ruihua123456
+
 db_type=MYSQL
 db_ip=10.88.111.21
 db_port=3306
 db_name=lis
 db_username=root
 db_password=ruihua123456
+db_back_path = /home/admin/admin_fc/db_bak
+
 upload_path=/home/admin/admin_fc
 server_name = app
 

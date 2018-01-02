@@ -1,0 +1,12 @@
+[upload]
+file_count = 2
+#
+
+
+[file0] 
+file_name = test.txt
+target_path = /home/admin/admin_fc
+
+[file1]
+file_name = test2.txt
+target_path = /home/admin/admin_fc/
