@@ -19,7 +19,7 @@
 	3) copy new project.war to tomcat_home/webapps/
 	4) start tomcat
 
-+ uploadgate.py
++ ## uploadgate.py
 
 	(1) upload
 
@@ -30,7 +30,7 @@
 	2) [Local] You must config ```file_count``` and ```file_name``` in ```./upload/upload.cnf``` to figure out which files will be uploaded.
 	3) [Gate] Files will be uploaded to ```gate_upload_path``` on ```gate```. You can config it in ```pro.cnf```.
 
-+ hotreplace.py
++ ## hotreplace.py
 
 	(1) hotreplace
 	```~:fab -f hotreplace.py hotreplace```
@@ -39,7 +39,7 @@
 	2) [Gate] File location on ```gate``` can be configured in ```pro.cnf``` at ```gate_upload_path```. Ensure the existence of the files in this directory.
 	3) [App] File name and upload path on ```app server``` must be configured in ```./upload/upload.cnf``` at ```file_name``` and ```target_path```.
 
-+ coldreplace.py
++ ## coldreplace.py
 
 	(1) coldreplace
 
@@ -51,7 +51,7 @@
 	3) [App] File name and upload path on ```app server```  must be configured in ```./upload/upload.cnf``` at ```file_name``` and ```target_path```.
 	4) [App] This command will stop tomcat. You have to config the tomact home in ```pro.cnf``` at ```app_tomcat_home```.
 
-+ downloadgate.py
++ ## downloadgate.py
 
 	(1) download
 
@@ -62,7 +62,7 @@
 	2) [Local] File will be downloaded to ```./download```
 	3) [Local] File count and name must be configured in ```./download/download.cnf```.
 
-+ download.py
++ ## download.py
 
 	(1) download
 
